@@ -68,8 +68,9 @@ touch src/styles/scss/components/_icons.scss
 touch src/styles/scss/components/_images.scss
 
 touch src/styles/scss/layout/_containers.scss
-touch src/styles/scss/layout/_footer.scss
 touch src/styles/scss/layout/_header.scss
+touch src/styles/scss/layout/_nav.scss
+touch src/styles/scss/layout/_footer.scss
 
 touch src/styles/scss/utilities/_functions.scss
 touch src/styles/scss/utilities/_helpers.scss
@@ -100,6 +101,7 @@ touch src/styles/css/style.css
 # Layout Styles
 @import 'layout/containers',
         'layout/header',
+        'layout/nav',
         'layout/footer';
 
 # Component Styles
@@ -336,6 +338,29 @@ EOM
   }
 }
 EOM
+/bin/cat <<EOM >src/styles/scss/layout/_nav.scss
+// ======================================
+//  Nav Bar Styles
+// ======================================
+
+nav {
+  @include flexy($disp: flex, $justify: space-around);
+  align-items: center;
+  background: $color-secondary;
+  color: $color-text-secondary;
+  margin: 0;
+  padding: 15px 20px;
+  @include mq('s') {
+    // font-size: 3.4em;
+  }
+  .nav-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
+EOM
 
 #Utilities 
 /bin/cat <<EOM >src/styles/scss/utilities/_functions.scss
@@ -455,9 +480,15 @@ touch src/components/Main.js
 /bin/cat <<EOM >src/components/Header.js
 import React from 'react';
 
-const Header = () => (
+const Header = (props) => (
     <header className="header">
-        <h1>Header</h1>
+        <nav className="nav nav-top">
+            <a href="/" className="nav-link">CRA_SASS</a>
+            <a href="https://sass-lang.com/documentation" noreferrer="true" noopener="true" className="nav-link">Sass Documentation</a>
+            <a href="https://github.com/Usarneme/create-react-app-with-sass" className="nav-link">Code on GitHub</a>
+        </nav>
+        <h1 className="header title">Welcome to CRA_SASS Boilerplate!</h1>
+        <p className="subheading">{props.mode || "Create React apps with built-in Sass components"}</p>
     </header>
 );
 
@@ -469,11 +500,15 @@ import React from 'react';
 
 const Footer = () => (
     <div className="footer">
-        <div className="footer-col">Col 1</div>
-        <div className="footer-col">Col 2</div>
+        <h4>Footer</h4>
+        <div className="footer-container">
+            <div className="footer-col">Footer Column 1</div>
+            <div className="footer-col">Footer Column 2</div>
+            <div className="footer-col">Footer Column 3</div>
+        </div>
         <div className="footer-bottom">
-            <h2>Footer</h2>
-            <p>&copy; 2017</p>
+            <p>Footer Bottom</p>
+            <p>&copy; 2017-2019</p>
         </div>
     </div>
 );
