@@ -277,53 +277,60 @@ EOM
 
 // Main content
 .main {
-  @include flexy(\$disp: flex, \$wrap: wrap);
-  @include center;
-  background-color: \$color-accent;
-
   @include mq('s') {
+    @include flexy($disp: flex, $dir: column, $wrap: wrap);
+    @include center;
+    // background-color: $color-accent;
+    flex: 1 per-line(1);
+    justify-content: space-around;
   }
   @include mq('m') {
+    flex: 1 per-line(2);
   }
   @include mq('l') {
+    flex: 1 per-line(4);
   }
 }
 
-
 .hero {
-  background: linear-gradient(\$color-bg, \$color-shade);
-  color: \$color-text-secondary;
+  background: $color-accent;
+  color: $color-text-primary;
+  font-size: 1.75em;
+  margin: 1.65em 0.125em;
   p {
-    font-size: 1.2em;
+    font-size: 1.125em;
   }
 }
 
 .banner {
   padding: 20px;
   margin: 50px 0;
-  color: \$color-text-primary;
-  background-color: \$color-primary-light;
+  color: $color-text-primary;
+  background: linear-gradient($color-accent, $color-secondary);
+}
+
+.cards {
+  @include flexy($dir: row, $justify: center);
+  color: $color-bg;
 }
 
 .card {
   width: 100%;
-  margin: \$gutter;
+  max-width: 550px;
   padding: 1.5em 1em;
   border-radius: 0.25em;
-  background-color: \$color-accent;
-  border: 1px solid darken(\$color-shade, 20%);
+  background: $color-secondary;
+  border: 1px solid darken($color-shade, 20%);
   h1 {
     line-height: 1.25;
     margin: 0.35em 0 0;
-    color: \$color-text-primary;
+    color: $color-text-primary;
   }
   @include mq('s') {
     flex: 1 per-line(2);
-    justify-content: space-around;
   }
   @include mq('m') {
     flex-basis: per-line(3);
-    justify-content: space-around;
   }
   @include mq('l') {
     flex-basis: per-line(4);
@@ -336,22 +343,17 @@ EOM
 //  Footer Styles
 // ======================================
 
-footer {
-  @include flexy(\$disp: flex, \$dir: column, \$wrap: wrap);
-  height: 100px;
+.footer {
+  @include flexy($disp: flex, $dir: column, $wrap: wrap, $justify: space-around);
   padding: 2em 0 0;
   margin-top: 1.5em;
-  background-color: \$color-shade;
+  background: $color-secondary;
 }
 
-.footer-col {
-  padding: 1em;
-  margin-top: 1em;
-  min-width: 50px;
-  min-height: 50px;
-  background-color: \$color-shade;
+.footer-container {
+  @include flexy($disp: flex, $dir: row, $justify: space-around);
   @include mq('s') {
-    flex: 1 per-line(2);
+    flex: 1 per-line(3);
     justify-content: space-around;
   }
   @include mq('m') {
@@ -362,16 +364,24 @@ footer {
   }
 }
 
+.footer-col {
+  padding: 1em;
+  margin-top: 1em;
+  min-width: 50px;
+  min-height: 50px;
+  background: $color-shade;
+}
+
 .footer-bottom {
   @include center;
   max-width: 100vw;
   padding-top: 2rem;
-  color: \$color-text-primary;
+  color: $color-text-primary;
   a {
-    color: \$color-text-secondary;
+    color: $color-text-secondary;
   }
   a:hover {
-    color: \$color-shade;
+    color: $color-shade;
   }
 }
 EOM
@@ -382,11 +392,10 @@ EOM
 // ======================================
 
 .header {
-  padding-top: 10px;
   min-height: 40px;
   h1 {
-    color: \$color-text-primary;
-    margin-bottom: 0;
+    color: $color-text-secondary;
+    margin: 0.5em;
     font-size: 3.8em;
     letter-spacing: 1px;
     @include mq('s') {
@@ -396,10 +405,11 @@ EOM
   p {
     margin: 0;
     font-size: 1.25em;
-    color: \$color-accent;
+    color: $color-accent;
   }
 }
 EOM
+
 /bin/cat <<EOM >src/styles/scss/layout/_nav.scss
 // ======================================
 //  Nav Bar Styles
