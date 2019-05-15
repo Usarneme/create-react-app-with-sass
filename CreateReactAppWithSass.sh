@@ -203,24 +203,57 @@ EOM
 //  Button Styles
 // ======================================
 
-%btn {
+.btn {
+  color: $color-bg;
+  margin: $gutter;
+  padding: 0.375rem 0.75rem;
   max-width: 50rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
   font-weight: bold;
-  margin: \$gutter auto;
-  padding: 0.75em 1.5em;
-  border-radius: 0.35em;
-  transition: opacity 0.3s;
   text-transform: uppercase;
-  background-color: \$color-secondary;
-
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   &:hover {
     opacity: 0.8;
-    background-color: \$color-secondary-light;
+    // background-color: $color-secondary-light;
   }
   &:active {
     opacity: initial;
-    background-color: \$color-secondary-light;    
+    // background-color: $color-secondary-light;    
   }
+}
+
+.btn-primary {
+  background: $color-primary;
+}
+.btn-secondary {
+  background: $color-primary-dark;
+}
+.btn-success {
+  background: green;
+}
+.btn-info {
+  background: $color-primary-light;
+}
+.btn-warning {
+  background: #525200;
+}
+.btn-danger {
+  background: red;
 }
 EOM
 
