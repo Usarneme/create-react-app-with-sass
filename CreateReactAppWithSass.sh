@@ -438,36 +438,36 @@ EOM
 //  Variables
 // ======================================
 
-\$color-primary: #0b3c5d;
-\$color-primary-light: lighten(\$color-primary, 20%);
-\$color-primary-dark: darken(\$color-primary, 20%);
+$color-primary: #328cc1;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
 
-\$color-secondary: #328cc1;
-\$color-secondary-light: lighten(\$color-secondary, 20%);
-\$color-secondary-dark: darken(\$color-secondary, 20%);
+$color-secondary: #375a7f;
+$color-secondary-light: lighten($color-secondary, 20%);
+$color-secondary-dark: darken($color-secondary, 20%);
 
-\$color-accent: #d9b310;
-\$color-shade: mix(\$color-primary, \$color-secondary, 50%);
+$color-accent: #d9b310;
+$color-shade: mix($color-primary, $color-secondary, 50%);
 
-\$color-bg: #3cc47c;
-\$color-bg-light: lighten(\$color-bg, 20%);
-\$color-bg-dark: darken(\$color-bg, 20%);
+$color-bg: #222;
+$color-bg-light: lighten($color-bg, 20%);
+$color-bg-dark: darken($color-bg, 20%);
 
-\$color-text-primary: black;
-\$color-text-secondary: white;
+$color-text-primary: #eee;
+$color-text-secondary: darken($color-text-primary, 20%);
 
 // Fonts
-\$font-stack-primary: 'Raleway', sans-serif;
-\$font-stack-secondary: 'Bree Serif', serif;
+$font-stack-primary: 'Raleway', sans-serif;
+$font-stack-secondary: 'Bree Serif', serif;
 
 // Layout
-\$max-width: 1070px;
-\$gutter: 10px;
+$max-width: 1070px;
+$gutter: 10px;
 
 // Breakpoints
-\$break-s: 48em;
-\$break-m: 62em;
-\$break-l: 75em;
+$break-s: 48em;
+$break-m: 62em;
+$break-l: 75em;
 EOM
 
 # Create React components folder and files. From the src directory
