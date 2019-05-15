@@ -145,27 +145,51 @@ EOM
 
 /bin/cat <<EOM >src/styles/scss/base/_themes.scss
 // ======================================
-//  MAIN
+//  MAIN - Light Mode
 //  Blue, Yellow, Dark Blue
 // ======================================
 
-\$color-primary: #0b3c5d;
-\$color-primary-light: lighten(\$color-primary, 20%);
-\$color-primary-dark: darken(\$color-primary, 20%);
+$color-primary: #328cc1;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
 
-\$color-secondary: #328cc1;
-\$color-secondary-light: lighten(\$color-secondary, 20%);
-\$color-secondary-dark: darken(\$color-secodary, 20%);
+$color-secondary: #0b3c5d;
+$color-secondary-light: lighten($color-secondary, 20%);
+$color-secondary-dark: darken($color-secondary, 20%);
 
-\$color-accent: #d9b310;
-\$color-shade: mix(\$color-primary, \$color-secondary, 50%);
+$color-accent: #fbcf19;
+$color-shade: mix($color-primary, $color-secondary, 50%);
 
-\$color-bg: #3cc47c;
-\$color-bg-light: lighten(\$color-bg);
-\$color-bg-dark: darken(\$color-bg);
+$color-bg: #b1d8e6;
+$color-bg-light: lighten($color-bg, 20%);
+$color-bg-dark: darken($color-bg, 20%);
 
-\$color-text: black;
-\$color-text-secondary: white;
+$color-text-primary: black;
+$color-text-secondary: white;
+
+
+// ======================================
+//  MAIN - Dark Mode
+//  Blue, Yellow, Dark Blue
+// ======================================
+
+$color-primary: #328cc1;
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-dark: darken($color-primary, 20%);
+
+$color-secondary: #375a7f;
+$color-secondary-light: lighten($color-secondary, 20%);
+$color-secondary-dark: darken($color-secondary, 20%);
+
+$color-accent: #d9b310;
+$color-shade: mix($color-primary, $color-secondary, 50%);
+
+$color-bg: #222;
+$color-bg-light: lighten($color-bg, 20%);
+$color-bg-dark: darken($color-bg, 20%);
+
+$color-text-primary: #eee;
+$color-text-secondary: darken($color-text-primary, 20%);
 EOM
 
 # Components 
