@@ -564,8 +564,10 @@ const Header = (props) => (
             <a href="https://sass-lang.com/documentation" noreferrer="true" noopener="true" className="nav-link">Sass Documentation</a>
             <a href="https://github.com/Usarneme/create-react-app-with-sass" className="nav-link">Code on GitHub</a>
         </nav>
-        <h1 className="header title">Welcome to CRA_SASS Boilerplate!</h1>
-        <p className="subheading">{props.mode || "Create React apps with built-in Sass components"}</p>
+        <div className="container center">
+            <h1 className="header title">Welcome to CRA_SASS Boilerplate!</h1>
+            <p className="subheading">{props.mode || "Create React apps with built-in Sass components"}</p>
+        </div>
     </header>
 );
 
@@ -598,14 +600,84 @@ import React from 'react';
 
 const Main = () => (
     <article className="main">
-        <header>
-            <h3>Main</h3>
-        </header>
-        <div className="hero">Hero</div>
+        <div className="hero">
+            <h3>Hero</h3>
+            <p>Big Data!</p>
+            <p>Calls to <button type="button" className="btn btn-primary">Action!</button></p>
+        </div>
+
         <div className="banner">Banner</div>
-        <div className="card">Card</div>
-        <h2>It is {new Date().toLocaleTimeString()}.</h2>
-        <p># Navigate to http:#localhost:3000/ or http:#localhost:3000/webpack-dev-server for more info</p>
+
+        <div className="cards">
+            <div className="card">
+                <h3>Card</h3>
+                <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                <p>Navigate to http:#localhost:3000/webpack-dev-server for more info</p>
+                <p>Other Card Data</p>
+            </div>
+
+            <div className="card">
+                <h3>Card</h3>
+                <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                <p>Navigate to http:#localhost:3000/webpack-dev-server for more info</p>
+                <p>Other Card Data</p>
+            </div>
+        </div>
+
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    <h3>Buttons</h3>
+                    <p className="component">
+                        <button type="button" className="btn btn-primary">Primary</button>
+                        <button type="button" className="btn btn-secondary">Secondary</button>
+                        <button type="button" className="btn btn-success">Success</button>
+                        <button type="button" className="btn btn-info">Info</button>
+                        <button type="button" className="btn btn-warning">Warning</button>
+                        <button type="button" className="btn btn-danger">Danger</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div className="container component headings">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+        </div>
+
+        <div className="container">
+            <div className="component">
+                <h2>Example body text</h2>
+                <p>Nullam quis risus eget <a href="/">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+                <p><small>This line of text is meant to be treated as fine print.</small></p>
+                <p>The following is <strong>rendered as bold text</strong>.</p>
+                <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+            </div>
+
+            <div className="component">
+                <h2>Blockquotes</h2>
+                <blockquote className="blockquote">
+                    <p className="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                    <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                </blockquote>
+            </div>
+            <div className="component">
+                <blockquote className="blockquote text-center">
+                    <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer className="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                </blockquote>
+            </div>
+            <div className="component">
+                <blockquote className="blockquote text-right">
+                    <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer className="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                </blockquote>
+            </div>
+        </div>
     </article>
 );
 
@@ -622,7 +694,7 @@ import Footer from './components/Footer';
 class App extends Component {
   render() {
     return (
-      <div className="wrapper">
+      <div className="wrapper container-fluid">
         <Header />
         <Main />
         <Footer />
