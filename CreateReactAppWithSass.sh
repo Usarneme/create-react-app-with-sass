@@ -20,7 +20,7 @@ if [[ $INSTALLED == $ERRNOTFOUND ]]; then
 echo "Install dependency: create-react-app"
 npm install -g create-react-app
 else
-echo "Create react app installed with current version $INSTALLED"
+echo "Create react app installed with current version \$INSTALLED"
 fi
 
 # One level above your project root folder (which folder will be created)
@@ -88,23 +88,23 @@ touch src/styles/css/style.css
 //  Partial Imports
 // ======================================
 
-# Utilities
+// Utilities
 @import 'utilities/variables',
         'utilities/mixins',
         'utilities/functions',
         'utilities/helpers';
 
-# Base Styles
+// Base Styles
 @import 'base/reset',
         'base/base';
 
-# Layout Styles
+// Layout Styles
 @import 'layout/containers',
         'layout/header',
         'layout/nav',
         'layout/footer';
 
-# Component Styles
+// Component Styles
 @import 'components/buttons',
         'components/icons',
         'components/images';
@@ -120,9 +120,9 @@ EOM
 
 body {
   margin: 0;
-  color: $color-text-primary;
-  font-family: $font-stack-primary;
-  background: $color-bg;
+  color: \$color-text-primary;
+  font-family: \$font-stack-primary;
+  background: \$color-bg;
 }
 
 ul {
@@ -132,10 +132,10 @@ ul {
 }
 
 a {
-  color: $color-text-primary;
+  color: \$color-text-primary;
   text-decoration: none;
   &:hover {
-    color: $color-text-secondary;
+    color: \$color-text-secondary;
   }
 }
 
@@ -154,23 +154,23 @@ EOM
 //  Blue, Yellow, Dark Blue
 // ======================================
 
-$color-primary: #328cc1;
-$color-primary-light: lighten($color-primary, 20%);
-$color-primary-dark: darken($color-primary, 20%);
+\$color-primary: #328cc1;
+\$color-primary-light: lighten(\$color-primary, 20%);
+\$color-primary-dark: darken(\$color-primary, 20%);
 
-$color-secondary: #0b3c5d;
-$color-secondary-light: lighten($color-secondary, 20%);
-$color-secondary-dark: darken($color-secondary, 20%);
+\$color-secondary: #0b3c5d;
+\$color-secondary-light: lighten(\$color-secondary, 20%);
+\$color-secondary-dark: darken(\$color-secondary, 20%);
 
-$color-accent: #fbcf19;
-$color-shade: mix($color-primary, $color-secondary, 50%);
+\$color-accent: #fbcf19;
+\$color-shade: mix(\$color-primary, \$color-secondary, 50%);
 
-$color-bg: #b1d8e6;
-$color-bg-light: lighten($color-bg, 20%);
-$color-bg-dark: darken($color-bg, 20%);
+\$color-bg: #b1d8e6;
+\$color-bg-light: lighten(\$color-bg, 20%);
+\$color-bg-dark: darken(\$color-bg, 20%);
 
-$color-text-primary: black;
-$color-text-secondary: white;
+\$color-text-primary: black;
+\$color-text-secondary: white;
 
 
 // ======================================
@@ -178,23 +178,23 @@ $color-text-secondary: white;
 //  Blue, Yellow, Dark Blue
 // ======================================
 
-$color-primary: #328cc1;
-$color-primary-light: lighten($color-primary, 20%);
-$color-primary-dark: darken($color-primary, 20%);
+\$color-primary: #328cc1;
+\$color-primary-light: lighten(\$color-primary, 20%);
+\$color-primary-dark: darken(\$color-primary, 20%);
 
-$color-secondary: #375a7f;
-$color-secondary-light: lighten($color-secondary, 20%);
-$color-secondary-dark: darken($color-secondary, 20%);
+\$color-secondary: #375a7f;
+\$color-secondary-light: lighten(\$color-secondary, 20%);
+\$color-secondary-dark: darken(\$color-secondary, 20%);
 
-$color-accent: #d9b310;
-$color-shade: mix($color-primary, $color-secondary, 50%);
+\$color-accent: #d9b310;
+\$color-shade: mix(\$color-primary, \$color-secondary, 50%);
 
-$color-bg: #222;
-$color-bg-light: lighten($color-bg, 20%);
-$color-bg-dark: darken($color-bg, 20%);
+\$color-bg: #222;
+\$color-bg-light: lighten(\$color-bg, 20%);
+\$color-bg-dark: darken(\$color-bg, 20%);
 
-$color-text-primary: #eee;
-$color-text-secondary: darken($color-text-primary, 20%);
+\$color-text-primary: #eee;
+\$color-text-secondary: darken(\$color-text-primary, 20%);
 EOM
 
 # Components 
@@ -204,8 +204,8 @@ EOM
 // ======================================
 
 .btn {
-  color: $color-bg;
-  margin: $gutter;
+  color: \$color-bg;
+  margin: \$gutter;
   padding: 0.375rem 0.75rem;
   max-width: 50rem;
   font-size: 0.9375rem;
@@ -229,25 +229,25 @@ EOM
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
   &:hover {
     opacity: 0.8;
-    // background-color: $color-secondary-light;
+    // background-color: \$color-secondary-light;
   }
   &:active {
     opacity: initial;
-    // background-color: $color-secondary-light;    
+    // background-color: \$color-secondary-light;    
   }
 }
 
 .btn-primary {
-  background: $color-primary;
+  background: \$color-primary;
 }
 .btn-secondary {
-  background: $color-primary-dark;
+  background: \$color-primary-dark;
 }
 .btn-success {
   background: green;
 }
 .btn-info {
-  background: $color-primary-light;
+  background: \$color-primary-light;
 }
 .btn-warning {
   background: #525200;
@@ -278,9 +278,9 @@ EOM
 // Main content
 .main {
   @include mq('s') {
-    @include flexy($disp: flex, $dir: column, $wrap: wrap);
+    @include flexy(\$disp: flex, \$dir: column, \$wrap: wrap);
     @include center;
-    // background-color: $color-accent;
+    // background-color: \$color-accent;
     flex: 1 per-line(1);
     justify-content: space-around;
   }
@@ -297,8 +297,8 @@ EOM
 }
 
 .hero {
-  background: $color-accent;
-  color: $color-text-primary;
+  background: \$color-accent;
+  color: \$color-text-primary;
   font-size: 1.75em;
   margin: 1.65em 0.125em;
   p {
@@ -309,13 +309,13 @@ EOM
 .banner {
   padding: 20px;
   margin: 50px 0;
-  color: $color-text-primary;
-  background: linear-gradient($color-accent, $color-secondary);
+  color: \$color-text-primary;
+  background: linear-gradient(\$color-accent, \$color-secondary);
 }
 
 .cards {
-  @include flexy($dir: row, $justify: center);
-  color: $color-bg;
+  @include flexy(\$dir: row, \$justify: center);
+  color: \$color-bg;
 }
 
 .card {
@@ -323,12 +323,12 @@ EOM
   max-width: 550px;
   padding: 1.5em 1em;
   border-radius: 0.25em;
-  background: $color-secondary;
-  border: 1px solid darken($color-shade, 20%);
+  background: \$color-secondary;
+  border: 1px solid darken(\$color-shade, 20%);
   h1 {
     line-height: 1.25;
     margin: 0.35em 0 0;
-    color: $color-text-primary;
+    color: \$color-text-primary;
   }
   @include mq('s') {
     flex: 1 per-line(2);
@@ -348,14 +348,14 @@ EOM
 // ======================================
 
 .footer {
-  @include flexy($disp: flex, $dir: column, $wrap: wrap, $justify: space-around);
+  @include flexy(\$disp: flex, \$dir: column, \$wrap: wrap, \$justify: space-around);
   padding: 2em 0 0;
   margin-top: 1.5em;
-  background: $color-secondary;
+  background: \$color-secondary;
 }
 
 .footer-container {
-  @include flexy($disp: flex, $dir: row, $justify: space-around);
+  @include flexy(\$disp: flex, \$dir: row, \$justify: space-around);
   @include mq('s') {
     flex: 1 per-line(3);
     justify-content: space-around;
@@ -373,19 +373,19 @@ EOM
   margin-top: 1em;
   min-width: 50px;
   min-height: 50px;
-  background: $color-shade;
+  background: \$color-shade;
 }
 
 .footer-bottom {
   @include center;
   max-width: 100vw;
   padding-top: 2rem;
-  color: $color-text-primary;
+  color: \$color-text-primary;
   a {
-    color: $color-text-secondary;
+    color: \$color-text-secondary;
   }
   a:hover {
-    color: $color-shade;
+    color: \$color-shade;
   }
 }
 EOM
@@ -398,7 +398,7 @@ EOM
 .header {
   min-height: 40px;
   h1 {
-    color: $color-text-secondary;
+    color: \$color-text-secondary;
     margin: 0.5em;
     font-size: 3.8em;
     letter-spacing: 1px;
@@ -409,7 +409,7 @@ EOM
   p {
     margin: 0;
     font-size: 1.25em;
-    color: $color-accent;
+    color: \$color-accent;
   }
 }
 EOM
@@ -420,10 +420,10 @@ EOM
 // ======================================
 
 nav {
-  @include flexy($disp: flex, $justify: space-around);
+  @include flexy(\$disp: flex, \$justify: space-around);
   align-items: center;
-  background: $color-secondary;
-  color: $color-text-secondary;
+  background: \$color-secondary;
+  color: \$color-text-secondary;
   margin: 0;
   padding: 15px 20px;
   @include mq('s') {
@@ -444,14 +444,14 @@ EOM
 //  Functions
 // ======================================
 
-@function px-to-pc(\$target, \$context: \$max-width) {
-  @return (\$target / \$context) * 100%;
+@function px-to-pc(\\$target, \\$context: \\$max-width) {
+  @return (\\$target / \\$context) * 100%;
 }
 
-@function per-line(\$items) {
-  \$g-pct: px-to-pc(\$gutter) * 2;
-  \$g-total: \$items * \$g-pct;
-  @return (100% / \$items) - \$g-total;
+@function per-line(\\$items) {
+  \\$g-pct: px-to-pc(\\$gutter) * 2;
+  \\$g-total: \\$items * \\$g-pct;
+  @return (100% / \\$items) - \\$g-total;
 }
 EOM
 
@@ -483,27 +483,27 @@ EOM
 }
 
 // Flex container
-@mixin flexy($disp: flex, $dir: null, $wrap: null, $justify: null) {
-  display: $disp;
-  flex-direction: $dir;
-  flex-wrap: $wrap;
-  justify-content: $justify;
+@mixin flexy(\$disp: flex, \$dir: null, \$wrap: null, \$justify: null) {
+  display: \$disp;
+  flex-direction: \$dir;
+  flex-wrap: \$wrap;
+  justify-content: \$justify;
 }
 
 // Media Queries
-@mixin mq($break) {
-  @if $break == 's' {
-    @media (min-width: $break-s) {
+@mixin mq(\$break) {
+  @if \$break == 's' {
+    @media (min-width: \$break-s) {
       @content;
     }
   }
-  @else if $break == 'm' {
-    @media (min-width: $break-m) {
+  @else if \$break == 'm' {
+    @media (min-width: \$break-m) {
       @content;
     }    
   }
-  @else if $break == 'l' {
-    @media (min-width: $break-l) {
+  @else if \$break == 'l' {
+    @media (min-width: \$break-l) {
       @content;
     }    
   }
@@ -515,36 +515,36 @@ EOM
 //  Variables
 // ======================================
 
-$color-primary: #328cc1;
-$color-primary-light: lighten($color-primary, 20%);
-$color-primary-dark: darken($color-primary, 20%);
+\$color-primary: #328cc1;
+\$color-primary-light: lighten(\$color-primary, 20%);
+\$color-primary-dark: darken(\$color-primary, 20%);
 
-$color-secondary: #375a7f;
-$color-secondary-light: lighten($color-secondary, 20%);
-$color-secondary-dark: darken($color-secondary, 20%);
+\$color-secondary: #375a7f;
+\$color-secondary-light: lighten(\$color-secondary, 20%);
+\$color-secondary-dark: darken(\$color-secondary, 20%);
 
-$color-accent: #d9b310;
-$color-shade: mix($color-primary, $color-secondary, 50%);
+\$color-accent: #d9b310;
+\$color-shade: mix(\$color-primary, \$color-secondary, 50%);
 
-$color-bg: #222;
-$color-bg-light: lighten($color-bg, 20%);
-$color-bg-dark: darken($color-bg, 20%);
+\$color-bg: #222;
+\$color-bg-light: lighten(\$color-bg, 20%);
+\$color-bg-dark: darken(\$color-bg, 20%);
 
-$color-text-primary: #eee;
-$color-text-secondary: darken($color-text-primary, 20%);
+\$color-text-primary: #eee;
+\$color-text-secondary: darken(\$color-text-primary, 20%);
 
 // Fonts
-$font-stack-primary: 'Raleway', sans-serif;
-$font-stack-secondary: 'Bree Serif', serif;
+\$font-stack-primary: 'Raleway', sans-serif;
+\$font-stack-secondary: 'Bree Serif', serif;
 
 // Layout
-$max-width: 1070px;
-$gutter: 10px;
+\$max-width: 1070px;
+\$gutter: 10px;
 
 // Breakpoints
-$break-s: 48em;
-$break-m: 62em;
-$break-l: 75em;
+\$break-s: 48em;
+\$break-m: 62em;
+\$break-l: 75em;
 EOM
 
 # Create React components folder and files. From the src directory
@@ -733,4 +733,5 @@ sed -i -e 's/"start": "react-scripts start",/"sass":"sass --watch src\/styles\/s
     "start": "react-scripts start",/g' package.json
 
 # Start up SASS from the root directory (now that it’s in package.json)
+echo You may have to open src/index.js and comment out the serviceWorker lines. FYI
 npm start sass
