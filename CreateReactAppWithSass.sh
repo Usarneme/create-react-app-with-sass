@@ -292,6 +292,10 @@ EOM
   }
 }
 
+.center {
+  @include center;
+}
+
 .hero {
   background: $color-accent;
   color: $color-text-primary;
@@ -475,30 +479,31 @@ EOM
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 // Flex container
-@mixin flexy(\$disp: flex, \$dir: null, \$wrap: null, \$justify: null) {
-  display: \$disp;
-  flex-direction: \$dir;
-  flex-wrap: \$wrap;
-  justify-content: \$justify;
+@mixin flexy($disp: flex, $dir: null, $wrap: null, $justify: null) {
+  display: $disp;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $justify;
 }
 
 // Media Queries
-@mixin mq(\$break) {
-  @if \$break == 's' {
-    @media (min-width: \$break-s) {
+@mixin mq($break) {
+  @if $break == 's' {
+    @media (min-width: $break-s) {
       @content;
     }
   }
-  @else if \$break == 'm' {
-    @media (min-width: \$break-m) {
+  @else if $break == 'm' {
+    @media (min-width: $break-m) {
       @content;
     }    
   }
-  @else if \$break == 'l' {
-    @media (min-width: \$break-l) {
+  @else if $break == 'l' {
+    @media (min-width: $break-l) {
       @content;
     }    
   }
