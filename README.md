@@ -43,6 +43,6 @@ to start editing the App.js file, add your own React components to the src/compo
 Feel free to send any commits, problems/bugs/issues, praise and beer money to ididnotknowicoulddothat[at]gmail.com
 
 ## Demo
-To see a live demo visit usarneme-cra-sass.surge.sh
+To see a live demo visit https://usarneme-cra-sass.surge.sh/
 
 Thanks!
