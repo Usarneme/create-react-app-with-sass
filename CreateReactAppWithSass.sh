@@ -444,14 +444,14 @@ EOM
 //  Functions
 // ======================================
 
-@function px-to-pc(\\$target, \\$context: \\$max-width) {
-  @return (\\$target / \\$context) * 100%;
+@function px-to-pc(\$target, \$context: \$max-width) {
+  @return (\$target / \$context) * 100%;
 }
 
-@function per-line(\\$items) {
-  \\$g-pct: px-to-pc(\\$gutter) * 2;
-  \\$g-total: \\$items * \\$g-pct;
-  @return (100% / \\$items) - \\$g-total;
+@function per-line(\$items) {
+  \$g-pct: px-to-pc(\$gutter) * 2;
+  \$g-total: \$items * \$g-pct;
+  @return (100% / \$items) - \$g-total;
 }
 EOM
 
