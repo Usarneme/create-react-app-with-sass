@@ -114,12 +114,19 @@ EOM
 /bin/cat <<EOM >src/styles/scss/base/_base.scss
 /* Base Styles ------------------------------------------- */
 
-* {
+html {
   box-sizing: border-box;
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
   color: \$color-text-primary;
   font-family: \$font-stack-primary;
   background: \$color-bg;
@@ -278,17 +285,14 @@ EOM
 // Main content
 .main {
   @include mq('s') {
-    @include flexy(\$disp: flex, \$dir: column, \$wrap: wrap);
     @include center;
     // background-color: \$color-accent;
-    flex: 1 per-line(1);
-    justify-content: space-around;
+    max-width: 150rem;
+    min-height: 82vh;
   }
   @include mq('m') {
-    flex: 1 per-line(2);
   }
   @include mq('l') {
-    flex: 1 per-line(4);
   }
 }
 
@@ -299,10 +303,11 @@ EOM
 .hero {
   background: \$color-accent;
   color: \$color-text-primary;
-  font-size: 1.75em;
-  margin: 1.65em 0.125em;
+  font-size: 3rem;
+  margin: 2.65rem 0.125rem;
+  padding: 5rem 1rem;
   p {
-    font-size: 1.125em;
+    font-size: 1.5rem;
   }
 }
 
@@ -733,5 +738,7 @@ sed -i -e 's/"start": "react-scripts start",/"sass":"sass --watch src\/styles\/s
     "start": "react-scripts start",/g' package.json
 
 # Start up SASS from the root directory (now that it’s in package.json)
+sass src/styles/scss:src/styles/css
+
 echo You may have to open src/index.js and comment out the serviceWorker lines. FYI
-npm start sass
+npm run start
